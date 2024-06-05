@@ -4,13 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ISD_Project.Server.DataAccess
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
     {
 
         //Constructor
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-        {
-        }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

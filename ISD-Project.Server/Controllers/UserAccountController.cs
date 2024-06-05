@@ -11,7 +11,6 @@ namespace ISD_Project.Server.Controllers
     [Authorize]
     //TODO: Avoid providing too much information in error messages Register, Login, Verify
     //DONE: Fix violates principles single responsibility in CreatePasswordHash, CreateRandomToken, VerifyPasswordHash
-    //DONE: Use authentication
 
     public class UserAccountController : ControllerBase
     {

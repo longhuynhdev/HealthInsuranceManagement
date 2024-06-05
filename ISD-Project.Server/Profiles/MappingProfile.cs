@@ -9,6 +9,7 @@ namespace ISD_Project.Server.Profiles
         public MappingProfile()
         {
             //CreateMap<Source, Destination>();
+            //Using AutoMapper library to map between Model and DTO and vice versa
             //Model -> DTO
             CreateMap<User, UserDto>();
             CreateMap<Customer, CustomerDto>();

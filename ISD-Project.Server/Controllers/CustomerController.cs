@@ -7,7 +7,7 @@ namespace ISD_Project.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    // [Authorize]
+    [Authorize]
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerService _customerService;
@@ -24,12 +24,13 @@ namespace ISD_Project.Server.Controllers
             return result.result;
         }
 
-        [HttpDelete("delete-customer/{id}"), AllowAnonymous]
+        [HttpDelete("delete-customer/{id}"), Authorize(Roles = "Admin")]
         public Task<IActionResult> DeleteCustomer(int id)
         {
             return _customerService.DeleteCustomerForceAsync(id);
         }
-        [HttpGet("get-customer"), AllowAnonymous]
+        
+        [HttpGet("get-customer"), Authorize(Roles = "Admin")]
         public Task<IActionResult> GetCustomer()
         {
             return _customerService.GetCustomerAsync();

@@ -61,6 +61,7 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 // inject db context
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 // inject services
+// scoped: new instance for each request
 builder.Services.AddScoped<ICryptoService, CryptoService>();
 builder.Services.AddScoped<IUserAccountService, UserAccountService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
