@@ -71,8 +71,8 @@ const HomePage = () => {
             <Header />
             <section className="font-[Raleway]">
 
-                <div className=" w-full h-650 mb-10 grid grid-cols-2">
-                    <div className="m-auto bg-white p-5 rounded shadow-xl shadow-slate-300 max-w-1">
+                <div className="w-full h-650 mb-10 grid grid-cols-2">
+                    <div className="m-auto bg-white p-5 rounded shadow-xl shadow-slate-300 max-w-full">
 
                         <div className="flex item-center justify-center">
                             <h1 className="text-3xl font-bold">
@@ -93,7 +93,6 @@ const HomePage = () => {
                         
                     </div>
                     <img src={bhsk} className="m-auto w-3/4 rounded shadow-2xl shadow-slate-300"/>
-
                 </div>
                 
                 <hr className="my-2 h-[1.5px] bg-gray-400 w-1/2 m-auto" />
@@ -104,17 +103,15 @@ const HomePage = () => {
                 
                 
 
-                {insuranceData.map(item => (
+                <div className="grid grid-cols-2 gap-4">
+                    {insuranceData.map(item => (
                         <div key={item.insuranceId} className="bg-white border border-gray-250 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative">
-                            {/* <span className="bg-red-100 border border-red-500 rounded-full text-primary text-sm poppins px-4 py-1 inline-block mb-4 ">
-                                Loại bảo hiểm
-                            </span> */}
 
                             <img className="w-64 mx-auto transform transition duration-300 hover:scale-105" src="https://www.prudential.com.vn/export/sites/prudential-vn/vi/.thu-vien/hinh-anh/san-pham-bao-hiem-nhan-tho/ke-hoach-bao-ve/sp-phu-bao-an-thumb-366x206.jpg" alt="" />
-                            
+
                             <div className="flex flex-col items-center my-3 space-y-2">
-                            <h1 className="py-3 text-gray-900 poppins text-lg">{item.insuranceName}</h1>
-                                <div className= "w-11/12 border-b-2"></div>
+                                <h1 className="py-3 text-gray-900 poppins text-lg">{item.insuranceName}</h1>
+                                <div className="w-11/12 border-b-2"></div>
                                 <p className="py-3 text-gray-500 poppins text-sm text-center">{item.summaryDescription}</p>
                                 <button type="button"
                                     className="focus:outline-none text-white bg-buttonProduct hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-20 py-3 mb-2"
@@ -122,10 +119,11 @@ const HomePage = () => {
                                 >
                                     Tìm hiểu thêm
                                 </button>
-                                
                             </div>
-                    </div>
+                        </div>
                     ))}
+                </div>
+
             </section>
             <Footer />
         </div>
